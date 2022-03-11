@@ -2,7 +2,7 @@
  *         I'm using: https://docs.opendota.com/
  */
 
-var express = require('express')
+const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
@@ -12,8 +12,8 @@ app.get('/', (req, res) => {
 // the static we want is the css file
 app.use(express.static(__dirname + '/public'));
 
-app.set('port', process.env.PORT || 8000);
-app.listen(app.get('port'), () => {
+const PORT = process.env.PORT || 3338;
+app.listen(PORT, () => {
 	console.log("Env: " + process.env.NODE_ENV);
-	console.log("Server opened!");
+	console.log("Server opened! Port: " + PORT);
 });
