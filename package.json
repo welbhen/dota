@@ -1,11 +1,11 @@
 {
   "name": "dotaapi",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node app.js"
+    "build": "node app.js",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,9 @@
   },
   "dependencies": {
     "express": "^4.17.3"
+  },
+  "description": "",
+  "engines": {
+    "node": "17.4"
   }
 }
