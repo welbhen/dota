@@ -12,34 +12,33 @@
 
 <body>
   <header>
-    <img src="https://www.logosurfer.com/wp-content/uploads/2018/03/dota-2-logo_0.png" id="logo" />
+    <img src="https://www.logosurfer.com/wp-content/uploads/2018/03/dota-2-logo_0.png"/>
   </header>
-  <main id="main">
-    <div class="container">
-      <h1 id="prompt">Enter a Player's ID</h1>
-      <form id="form" autocomplete="off">
-        <input type="text" id="input" value="86745912"><br/>
-        <button id="submit">SUBMIT</button>
-      </form>
-      <div id="responseField">
+  <main>
+    <div class="content">
+      <div class="search">
+        <h1>Enter a Player's ID</h1>
+        <form id="form" autocomplete="off">
+          <input class="input-field" type="text" id="input" value="86745912"><br/>
+          <button id="submit">SUBMIT</button>
+        </form>
+        <div class="response-field" id="responseField">
+          
+        </div>
       </div>
     </div>
     <div class="footer">
       <h4>Find me at:</h4>
       <div>
-        <form action="https://github.com/welbhen" target="_blank" rel="noopener noreferrer">
-          <button class="btn btn-secondary">GitHub</button>
+        <form class="btn-link" action="https://github.com/welbhen" target="_blank" rel="noopener noreferrer">
+          <button class="btn">GitHub</button>
         </form>
-        <form action="https://welbhen.github.io/" target="_blank" rel="noopener noreferrer">
-          <button class="btn btn-secondary">Portfolio</button>
+        <form class="btn-link" action="https://welbhen.github.io/" target="_blank" rel="noopener noreferrer">
+          <button class="btn">Portfolio</button>
         </form>
         <br/>
-        <small>Made by: Welberth Henrique Alves Marques</small>
-        
-      </div>
-      
-      
-      
+        <small>By: Welberth Henrique Alves Marques</small>
+      </div>      
     </div>
   </main>
   <script src='https://code.jquery.com/jquery-3.1.0.min.js'></script>

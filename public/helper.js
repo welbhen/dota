@@ -1,39 +1,43 @@
 const renderResponse = (res) => {
-  // Handles if res is falsey
-  if(!res){
-    console.log(res.status);
+  try{
+    // Handles if res is falsey
+    if(!res){
+      console.log(res.status);
+    }
+    const answer = JSON.parse(JSON.stringify(res));
+    const name = answer.profile.personaname;
+    const id = answer.profile.account_id;
+    const steamId = answer.profile.steamid;
+    const soloMMR = answer.solo_competitive_rank;
+    const rank = answer.leaderboard_rank;
+    const avatar = answer.profile.avatar;
+    
+    responseField.innerHTML = `<p align="justify">
+                  <img src="${avatar}" id="pic">
+                  ID: 	${id}
+                  <br>
+                  Name:		${name}
+                  <br>
+                  Steam ID: 	${steamId}
+                  <br>
+                  Solo MMR: 	${soloMMR}
+                  <br>
+                  Rank: 		${rank}							 
+                  </p>`;
+    return;
+  }catch(err){
+    //console.log(err);
+    responseField.innerHTML = `<p>
+                              Error! Player not found.
+                              <br>
+                              Please, try again with another ID.
+                              </p>`;
+    return;
   }
-  const answer = JSON.parse(JSON.stringify(res));
-  const name = answer.profile.personaname;
-  const id = answer.profile.account_id;
-  const steamId = answer.profile.steamid;
-  const soloMMR = answer.solo_competitive_rank;
-  const rank = answer.leaderboard_rank;
-  const avatar = answer.profile.avatar;
   
-  /*
-  let list = [name, steamId, soloMMR, rank];
-  list = list.join(" ");
-  // Manipulates responseField to render the modified response
-  responseField.innerHTML = `<p>The player data is:</p><ol>${list}</ol>`;
-  */
   
-  responseField.innerHTML = `<p align="justify">
-  							 <img src="${avatar}" id="pic">
-  							 ID: 	${id}
-  							 <br>
-  							 Name:		${name}
-  							 <br>
-  							 Steam ID: 	${steamId}
-  							 <br>
-  							 Solo MMR: 	${soloMMR}
-  							 <br>
-  							 Rank: 		${rank}							 
-  							 </p>`;
-  
-  return;
 }
-// ##################### BELLOW IS NOT USED:
+// ##################### BELLOW IS NOT USED - only for tests:
 
 // Renders response before it is modified
 const renderRawResponse = (res) => {

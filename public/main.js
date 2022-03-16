@@ -9,21 +9,25 @@ const responseField = document.querySelector('#responseField');
 
 // AJAX function
 const getSuggestions = () => {
-  const playerQuery = inputField.value;
-  const endPoint = url + queryParams + playerQuery;
-  //console.log(endPoint);
+  try{
+    const playerQuery = inputField.value;
+    const endPoint = url + queryParams + playerQuery;
+    //console.log(endPoint);
 
-  const xhr = new XMLHttpRequest();
-  xhr.responseType = 'json';
+    const xhr = new XMLHttpRequest();
+    xhr.responseType = 'json';
 
-  xhr.onreadystatechange = () => {
-    if (xhr.readyState === XMLHttpRequest.DONE) {
-	  //console.log("XHR.response: " + xhr.response);
-      renderResponse(xhr.response);
-    }
-  };
-  xhr.open('GET', endPoint);
-  xhr.send();
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState === XMLHttpRequest.DONE) {
+      //console.log("XHR.response: " + xhr.response);
+        renderResponse(xhr.response);
+      }
+    };
+    xhr.open('GET', endPoint);
+    xhr.send();
+  }catch(err){
+    console.log("Error: " + err);
+  }
 }
 
 // clear previous results and display results to webpage
